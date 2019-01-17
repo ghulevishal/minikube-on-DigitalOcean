@@ -47,6 +47,15 @@ git clone https://github.com/vishalcloudyuga/minikube-on-DigitalOcean
 cd minikube-on-DigitalOcean
 ```
 
+- Choose your kubernetes version.
+
+```
+git checkout tags/v1.13.0
+```
+Or
+```
+git checkout tags/v1.12.0
+```
 
 - Start minikube.
 
