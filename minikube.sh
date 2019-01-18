@@ -19,7 +19,6 @@ if [ -z $sshkey ]; then
     usage
 fi
 
-exit 0
 doctl compute droplet create --size 4gb --image ubuntu-16-04-x64 --region blr1 --ssh-keys $sshkey --enable-private-networking --tag-name $name $name
 
 while true; do
