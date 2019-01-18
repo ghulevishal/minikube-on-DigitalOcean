@@ -1,8 +1,25 @@
-#!/bin/bash -xe
+#!/bin/bash
 
 name=$1
 sshkey=$2
 
+
+function usage() {
+    echo "Usage: ./minikube.sh <droplet-name> <ssh-id>"
+    exit 1
+}
+
+if [ -z $name ]; then
+    echo "Droplet name is not set"
+    usage
+fi
+
+if [ -z $sshkey ]; then
+    echo "Droplet ssh-id not set"
+    usage
+fi
+
+exit 0
 doctl compute droplet create --size 4gb --image ubuntu-16-04-x64 --region blr1 --ssh-keys $sshkey --enable-private-networking --tag-name $name $name
 
 while true; do
