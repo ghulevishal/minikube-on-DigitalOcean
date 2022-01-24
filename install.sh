@@ -24,6 +24,6 @@ systemctl restart docker
 }
 
 {
-minikube config set embed-certs true
+#minikube config set embed-certs true
 minikube start --vm-driver none
 }
